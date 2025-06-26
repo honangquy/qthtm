@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm Windows Server 2012 R2</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-desktop"></i> Trắc nghiệm Windows Server 2012 R2</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">Câu hiện tại:</span>
+                    <span id="current-question">1</span>/<span id="total-questions">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Điểm:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Đúng:</span>
+                    <span id="correct-count">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Sai:</span>
+                    <span id="wrong-count">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="quiz-container">
+            <div class="question-card" id="question-card">
+                <div class="question-header">
+                    <span class="question-number">Câu <span id="question-num">1</span></span>
+                    <span class="question-part" id="question-part"></span>
+                </div>
+                
+                <div class="question-text" id="question-text">
+                    Đang tải câu hỏi...
+                </div>
+
+                <div class="options-container" id="options-container">
+                    <!-- Options will be dynamically generated -->
+                </div>
+
+                <div class="answer-feedback" id="answer-feedback" style="display: none;">
+                    <div class="feedback-content">
+                        <div class="feedback-header">
+                            <i class="fas fa-check-circle" id="feedback-icon"></i>
+                            <span id="feedback-text"></span>
+                        </div>
+                        <div class="explanation" id="explanation"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button id="prev-btn" class="nav-btn" disabled>
+                        <i class="fas fa-chevron-left"></i> Câu trước
+                    </button>
+                    <button id="next-btn" class="nav-btn">
+                        Câu tiếp <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-screen" id="results-screen" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <i class="fas fa-trophy"></i>
+                        <h2>Kết quả bài thi</h2>
+                    </div>
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="final-score">0</span>
+                            <span class="stat-label">Điểm</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="final-correct">0</span>
+                            <span class="stat-label">Câu đúng</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="final-wrong">0</span>
+                            <span class="stat-label">Câu sai</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="final-percentage">0%</span>
+                            <span class="stat-label">Tỷ lệ đúng</span>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button id="restart-btn" class="action-btn primary">
+                            <i class="fas fa-redo"></i> Làm lại
+                        </button>
+                        <button id="review-btn" class="action-btn secondary">
+                            <i class="fas fa-eye"></i> Xem lại
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <script src="questions-data-full.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
